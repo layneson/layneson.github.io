@@ -4,11 +4,40 @@
     <head>
         <title>Lost and Found</title>
         <link rel="stylesheet" href="theme.css"></link>
+
+        <style>
+            #container {
+                position: absolute;
+                width: 100%;
+                top: 30%;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 100px;
+                color: #8F81E6;
+                text-align: center;
+            }
+
+            #escapeButton {
+                border-radius:2px;
+                display:inline-block;
+                cursor:pointer;
+                font-size:40px;
+                text-decoration:none;
+                 color: #8F81E6;
+            }
+            #escapeButton:hover {
+                color: #DCD6FF;
+            }
+        </style>
     </head>
 
     <body>
         <div id="container">
             <h1>You lost!</h1>
+
+            <a id="escapeButton" href="/">find your way back -></a>
         </div>
     </body>
 
