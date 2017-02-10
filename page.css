@@ -2,18 +2,32 @@
 
 body {
     font-family: 'Slabo 27px';
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 h1 {
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
 
     font-weight: normal;
 
     cursor: default;
+}
 
-    margin-bottom: 50px;
+#topbar {
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    font-family: 'Slabo 27px';
+    font-size: 30px;
+
+    color: black;
+}
+
+#topbar:visited {
+    color: black;
 }
 
 ul {
@@ -24,28 +38,27 @@ ul {
 }
 
 li {
-    padding: 15px;
+    padding: 10px;
+
+    font-size: 28px;
 }
 
-a {
+.project-name {
+    font-weight: bold;
+    font-size: 30px;
+
+    color: black;
+
     text-decoration: none;
-    font-size: 40px;
 
     border-bottom: solid 2px transparent;
     transition: border-bottom-color 0.5s ease-in-out;
-
-    padding: 0;
 }
 
-a:link {
-    color: black;
-}
-
-a:visited {
-    color: black;
-}
-
-a:hover {
+.project-name:hover {
     border-bottom-color: black;
 }
 
+.project-name:visited {
+    color: black;
+}
