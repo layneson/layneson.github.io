@@ -1,0 +1,19 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "golang.org/x/crypto/acme",
+			"repository": "https://go.googlesource.com/crypto",
+			"revision": "7d9177d70076375b9a59c8fde23d52d9c4a7ecd5",
+			"branch": "master",
+			"path": "/acme"
+		},
+		{
+			"importpath": "golang.org/x/crypto/acme/autocert",
+			"repository": "https://go.googlesource.com/crypto",
+			"revision": "7d9177d70076375b9a59c8fde23d52d9c4a7ecd5",
+			"branch": "master",
+			"path": "/acme/autocert"
+		}
+	]
+}
