@@ -88,7 +88,7 @@ func serveDirectory(dir string, path string, rw http.ResponseWriter) {
 }
 
 func handlePage(rw http.ResponseWriter, req *http.Request) {
-	serveDirectory(".", req.URL.Path, rw)
+	serveDirectory("./site", req.URL.Path, rw)
 }
 
 func handleRowsOfB(rw http.ResponseWriter, req *http.Request) {
