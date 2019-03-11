@@ -17,11 +17,14 @@ h1 {
     text-align: center;
 }
 
-table {
-    widtH: 100%;
+#gallery-wrapper {
+    width: 100%;
+
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
 
-td {
+#gallery-wrapper div {
     text-align: center;
-    padding: 30px;
 }
