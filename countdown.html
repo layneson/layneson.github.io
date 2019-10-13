@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>SAR Countdown</title>
+
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=PT+Sans&display=swap');
+
+            #container {
+                width: 100%;
+                margin-top: 200px;
+            }
+
+            h1 {
+                text-align: center;
+                font-family: 'PT Sans', sans-serif;
+            }
+
+            #days {
+                font-size: 90px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <h1>There are</h1><h1 id="days">?</h1><h1>school days left until the SAR is due!</h1>
+        </div>
+
+        <script>
+            let ranges = [
+                {Year: 2019, Month: 10, Start: 14, End: 18},
+                {Year: 2019, Month: 10, Start: 21, End: 25},
+                {Year: 2019, Month: 10, Start: 28, End: 31},
+                {Year: 2019, Month: 11, Start: 1, End: 1},
+                {Year: 2019, Month: 11, Start: 4, End: 8},
+                {Year: 2019, Month: 11, Start: 11, End: 15},
+                {Year: 2019, Month: 11, Start: 18, End: 22},
+                {Year: 2019, Month: 11, Start: 25, End: 27},
+                {Year: 2019, Month: 12, Start: 2, End: 6},
+                {Year: 2019, Month: 12, Start: 9, End: 13},
+                {Year: 2020, Month: 1, Start: 21, End: 24},
+                {Year: 2020, Month: 1, Start: 27, End: 31},
+                {Year: 2020, Month: 2, Start: 3, End: 7},
+                {Year: 2020, Month: 2, Start: 10, End: 14},
+                {Year: 2020, Month: 2, Start: 17, End: 21},
+                {Year: 2020, Month: 2, Start: 24, End: 28},
+            ];
+
+            function compareDates(y1, m1, d1, y2, m2, d2) {
+                if (y2 > y1) return 1;
+                if (y2 < y1) return -1;
+
+                if (m2 > m1) return 1;
+                if (m2 < m1) return -1;
+
+                if (d2 > d1) return 1;
+                if (d2 < d1) return -1;
+
+                return 0;
+            }
+
+            function daysLeft(y, m, d) {
+                var numDays = 0;
+
+                var scanning = true;
+
+                for (const range of ranges) {
+                    if (!scanning) {
+                        numDays += range.End - range.Start + 1;
+                        continue;
+                    }
+
+                    if (compareDates(y, m, d, range.Year, range.Month, range.End) > 0) {
+                        if (compareDates(y, m, d, range.Year, range.Month, range.Start) <= 0) {
+                            numDays -= d - range.Start + 1;
+                        }
+
+                        numDays += range.End - range.Start + 1;
+                        scanning = false;
+                    }
+                }
+
+                return numDays;
+            }
+
+            var daysDisplay = document.getElementById("days");
+
+            var today = new Date();
+
+            console.log(today.getFullYear());
+            console.log(today.getMonth() + 1);
+            console.log(today.getDate());
+
+            daysDisplay.innerHTML = daysLeft(
+                today.getFullYear(), 
+                today.getMonth() + 1, 
+                today.getDate());
+        </script>
+    </body>
+</html>
