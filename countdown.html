@@ -15,8 +15,24 @@
                 font-family: 'PT Sans', sans-serif;
             }
 
+            @keyframes pulse {
+                from {
+                    color: #ad0000;
+                }
+
+                to {
+                    color: #570000;
+                }
+            }
+
             #days {
-                font-size: 90px;
+                font-size: 120px;
+
+                animation-duration: 1s;
+                animation-name: pulse;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
             }
         </style>
     </head>
