@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+}
+
+@keyframes pulse {
+    from {
+        color: #ad0000;
+    }
+
+    to {
+        color: black;
+    }
+}
+
+#days {
+    animation-duration: 1s;
+    animation-name: pulse;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    font-size: 300px;
+}
+
+#before {
+    display: none;
+}
