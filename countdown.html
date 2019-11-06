@@ -144,14 +144,19 @@
             console.log(today.getMonth() + 1);
             console.log(today.getDate());
 
-            today.setDate(21);
-
             dl = daysLeft(
                 today.getFullYear(), 
                 today.getMonth() + 1, 
                 today.getDate());
 
             daysDisplay.innerHTML = dl[1];
+
+            let start_speed = 1;
+            let end_speed = 0.08;
+
+            var prop_from_half = 1- dl[1]/53;
+            var speed = start_speed + prop_from_half * (end_speed - start_speed);
+            daysDisplay.style.animationDuration = "" + speed + "s";
         </script>
     </body>
 </html>
